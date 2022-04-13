@@ -4,13 +4,18 @@
     <hr />
     <p>{{this.description}}</p>
 
-    <button class='btn btn-primary me-2'>
+    <button
+      type='button'
+      class='btn btn-primary me-2 btnUpdate'
+      data-bs-toggle='modal'
+      data-bs-target='#taskModal'
+    >
       <i class='bi bi-pencil-fill'></i>
     </button>
 
-    <button class='btn btn-danger'>
+    <a href='/tasks/delete/{{this._id}}' class='btn btn-danger'>
       <i class='bi bi-trash-fill'></i>
-    </button>
+    </a>
   </div>
 
 {{else}}

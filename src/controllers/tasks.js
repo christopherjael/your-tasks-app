@@ -27,7 +27,34 @@ const createTask = async (req, res) => {
   }
 };
 
+const deleteTask = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Tasks.findByIdAndDelete(id);
+    res.redirect('/');
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+    throw new Error(error.message);
+  }
+};
+
+const updateTask = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { title, description } = req.body;
+    const payload = { title, description };
+
+    await Tasks.findByIdAndUpdate(id, payload);
+    res.redirect('/');
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+    throw new Error(error.message);
+  }
+};
+
 module.exports = {
   getAllTasks,
   createTask,
+  deleteTask,
+  updateTask,
 };

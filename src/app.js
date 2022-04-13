@@ -15,7 +15,9 @@ module.exports = class Server {
     this.port = process.env.PORT || 8080;
 
     this.middlewares();
+
     this.routes();
+
     this.connectDatabase();
   }
   middlewares() {
@@ -46,7 +48,9 @@ module.exports = class Server {
     await dbConnection();
   }
 
-  listen(message = '🚀 Server listening on port') {
+  listen(
+    message = `🚀 Server listening on port: ${this.port} | ${process.env.HOST}:${this.port}/`
+  ) {
     this.app.listen(this.port, () => {
       console.log(message);
     });

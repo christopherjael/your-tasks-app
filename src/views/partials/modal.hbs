@@ -1,0 +1,54 @@
+<div
+  class='modal fade'
+  id='taskModal'
+  tabindex='-1'
+  aria-labelledby='exampleModalLabel'
+  aria-hidden='true'
+>
+  <div class='modal-dialog modal-dialog-centered'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h5 class='modal-title' id='exampleModalLabel'>UpdateTask</h5>
+        <button
+          type='button'
+          class='btn-close'
+          data-bs-dismiss='modal'
+          aria-label='Close'
+        ></button>
+      </div>
+      <div class='modal-body'>
+        {{! form update }}
+        <form method='post' name='form-update-task' id='form-update-task'>
+          <div class='mb-3'>
+            <label for='title' class='form-label'>Title</label>
+            <input
+              type='text'
+              class='form-control'
+              id='updateTitle'
+              name='title'
+              aria-describedby='emailHelp'
+              required='true'
+            />
+          </div>
+          <div class='mb-3'>
+            <label for='description' class='form-label'>Description</label>
+            <textarea
+              name='description'
+              id='updateDescription'
+              class='form-control'
+            ></textarea>
+          </div>
+          <div class='modal-footer'>
+            <button
+              type='button'
+              class='btn btn-secondary'
+              data-bs-dismiss='modal'
+            >Close</button>
+            <button type='submit' type='button' class='btn btn-primary'>Save
+              changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

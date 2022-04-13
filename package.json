@@ -1,10 +1,11 @@
 {
   "name": "task-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "YourTask app is a web application that will help you keep, manage and remember your tasks or reminders",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "Christopher Montero",
@@ -20,5 +21,9 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/christopherjael/your-tasks-app"
   }
 }
