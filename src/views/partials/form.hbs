@@ -1,0 +1,37 @@
+<div class='card border-primary'>
+            <div class='card-header'>New task</div>
+            <div class='card-body'>
+              {{! form }}
+              <form method='post' action="/tasks" name="form-tasks">
+                <div class='mb-3'>
+                  <label for='title' class='form-label'>Title</label>
+                  <input
+                    type='text'
+                    class='form-control'
+                    id='title'
+                    name='title'
+                    aria-describedby='emailHelp'
+                    required="true"
+                  />
+                </div>
+                <div class='mb-3'>
+                  <label
+                    for='description'
+                    class='form-label'
+                  >Description</label>
+                  <textarea
+                    name='description'
+                    id='description'
+                    class='form-control'
+                  ></textarea>
+                </div>
+                <div class='d-grid gap-2'>
+                  <button
+                    type='submit'
+                    class='btn btn-primary btn-lg'
+                  >submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>

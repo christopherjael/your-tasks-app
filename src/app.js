@@ -10,7 +10,7 @@ module.exports = class Server {
     this.app = express();
     this.paths = {
       home: '/',
-      tasks: '/api/task',
+      tasks: '/tasks',
     };
     this.port = process.env.PORT || 8080;
 
@@ -34,11 +34,12 @@ module.exports = class Server {
     this.app.set('views', path.join(__dirname, 'views'));
     this.app.set('view engine', 'hbs');
     this.app.engine('hbs', require('hbs').__express);
+    hbs.registerPartials(path.join(__dirname, '/views/partials'));
   }
 
   routes() {
     this.app.use(this.paths.home, require('./routes/home.routes.js'));
-    this.app.use(this.paths.tasks, require('./routes/tasks.routes'));
+    this.app.use(this.paths.tasks, require('./routes/tasks.routes.js'));
   }
 
   async connectDatabase() {
