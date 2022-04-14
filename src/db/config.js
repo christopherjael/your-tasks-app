@@ -2,8 +2,7 @@ const { connect } = require('mongoose');
 
 module.exports = dbConnection = async () => {
   try {
-    console.log(process.env.MONGOBD_URI);
-    await connect(process.env.MONGOBD_URI);
+    await connect(process.env.MONGODB_URI);
 
     console.log('🗄️  Database Conneted');
   } catch (error) {
