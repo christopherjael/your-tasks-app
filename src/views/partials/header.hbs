@@ -1,3 +1,15 @@
-<header class='navbar navbar-expand-lg navbar-dark bg-primary'>
+<header
+  class='navbar navbar-expand-lg navbar-dark bg-primary d-flex justify-content-between'
+>
   <h1 class='m-2'>YourTasks</h1>
+  <div class='me-2'>
+    {{user.email}}
+    <br />
+    <form action='/logout' method='post'>
+      <button type='submit' class='btn'>
+        <span>Logout </span>
+        <i class='bi bi-box-arrow-right ms-2'></i>
+      </button>
+    </form>
+  </div>
 </header>

@@ -9,6 +9,10 @@ const TasksSchema = new Schema(
     description: {
       type: String,
     },
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: 'user',
+    },
   },
   {
     timestamps: true,
