@@ -1,4 +1,4 @@
-const Tasks = require('../models/tasks');
+const Tasks = require('../models/tasks.model.js');
 
 const getAllTasks = async (req, res) => {
   try {
@@ -13,8 +13,9 @@ const getAllTasks = async (req, res) => {
 const createTask = async (req, res) => {
   try {
     const { title, description } = req.body;
+    const { _id } = req.user;
 
-    const payload = { title, description };
+    const payload = { title, description, owner: _id };
 
     const task = Tasks(payload);
 
