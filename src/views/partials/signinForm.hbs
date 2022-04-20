@@ -31,8 +31,28 @@
       </div>
 
       <div class='input-group'>
-        <button type='submit' class='btn btn-primary m-auto'>login</button>
+        <button
+          type='submit'
+          class='btn col-12 btn-primary m-auto'
+        >Login</button>
       </div>
+
+      <p class='text-muted text-center m-auto my-2'>or</p>
+
+      <div class='row gap-2 px-2'>
+        <a
+          href='/oauth/redirect/facebook/login'
+          class='btn btn-primary col-12 col-ms'
+        ><i class='bi bi-facebook me-2'></i>
+          Sign in with Facebook</a>
+
+        <a
+          href='/oauth2/redirect/google/login'
+          class='btn btn-danger col-12 col-sm'
+        ><i class='bi bi-google me-2'></i>
+          Sign in with Google</a>
+      </div>
+
     </form>
   </div>
   <div class='card-footer text-center'>

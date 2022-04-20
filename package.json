@@ -1,10 +1,10 @@
 {
   "name": "task-app",
-  "version": "1.0.0",
+  "version": "2.3.2",
   "description": "YourTask app is a web application that will help you keep, manage and remember your tasks or reminders",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "nodemon index.js -e hbs,js,mjs,json",
     "start": "node index.js"
   },
   "keywords": [],
@@ -22,6 +22,8 @@
     "mongoose": "^6.2.10",
     "morgan": "^1.10.0",
     "passport": "^0.5.2",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth2": "^0.2.0",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {

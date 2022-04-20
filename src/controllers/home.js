@@ -16,6 +16,12 @@ const renderHomePage = async (req, res) => {
   res.render('index.hbs', { tasks, user });
 };
 
+const renderAccountPage = (req, res) => {
+  const { user } = req;
+  res.render('account.hbs', { user });
+};
+
 module.exports = {
   renderHomePage,
+  renderAccountPage,
 };

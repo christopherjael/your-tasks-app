@@ -1,15 +1,16 @@
-<header
-  class='navbar navbar-expand-lg navbar-dark bg-primary d-flex justify-content-between'
->
-  <h1 class='m-2'>YourTasks</h1>
-  <div class='me-2'>
-    {{user.email}}
-    <br />
-    <form action='/logout' method='post'>
-      <button type='submit' class='btn'>
-        <span>Logout </span>
-        <i class='bi bi-box-arrow-right ms-2'></i>
-      </button>
-    </form>
-  </div>
+<header>
+  <nav class='navbar navbar-light bg-primary'>
+    <div class='container-fluid'>
+      <a href='/' class='navbar-brand text-white'><h2>YourTasks</h2></a>
+      <div class='d-flex align-content-end justify-content-center'>
+        <a href='/account' class='d-flex text-white'>
+          <p class='m-0 p-0'>{{user.username}}</p>
+          <i class='bi bi-person fs-4 ms-1'></i>
+        </a>
+        <a href='/logout'>
+          <i class='bi bi-box-arrow-right text-white fs-4 ms-3'></i>
+        </a>
+      </div>
+    </div>
+  </nav>
 </header>

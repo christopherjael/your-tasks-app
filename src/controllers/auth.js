@@ -10,9 +10,9 @@ const renderSignupPage = (req, res) => {
 
 const createAccount = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { username, email, password } = req.body;
     console.log(email, password);
-    const newUser = new User({ email, password });
+    const newUser = new User({ username, email, password });
     await newUser.save();
     res.redirect('/signin');
   } catch (error) {

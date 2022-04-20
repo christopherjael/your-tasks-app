@@ -5,6 +5,18 @@
   <div class='card-body'>
     <form action='/signup' method='post'>
       <div class='input-group mb-4'>
+        <i class='bi bi-person-fill input-group-text'></i>
+        <input
+          type='text'
+          required='true'
+          class='form-control'
+          name='username'
+          placeholder='username'
+          aria-label='Username'
+          aria-describedby='basic-addon1'
+        />
+      </div>
+      <div class='input-group mb-4'>
         <i class='bi bi-envelope-fill input-group-text'></i>
         <input
           type='email'
@@ -12,7 +24,7 @@
           class='form-control'
           name='email'
           placeholder='example@mail.com'
-          aria-label='Username'
+          aria-label='Email'
           aria-describedby='basic-addon1'
         />
       </div>
@@ -25,7 +37,7 @@
           class='form-control'
           name='password'
           placeholder='••••••••'
-          aria-label='Username'
+          aria-label='Password'
           aria-describedby='basic-addon1'
           id='pass'
         />

@@ -3,14 +3,28 @@ const bcrypt = require('bcrypt');
 
 const UserSchema = new Schema(
   {
-    email: {
+    username: {
       type: String,
       required: true,
+    },
+    email: {
+      type: String,
+      required: false,
       unique: true,
+      index: true,
+      sparse: true,
     },
     password: {
       type: String,
-      required: true,
+      required: false,
+    },
+    facebookId: {
+      type: String,
+      required: false,
+    },
+    googleId: {
+      type: String,
+      required: false,
     },
   },
   {
@@ -19,6 +33,9 @@ const UserSchema = new Schema(
 );
 
 UserSchema.pre('save', async function (next) {
+  if (!this.password) {
+    return next();
+  }
   const hash = await bcrypt.hash(this.password, 10);
   this.password = hash;
   next();

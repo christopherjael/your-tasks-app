@@ -17,11 +17,11 @@ module.exports = class Server {
     };
     this.port = process.env.PORT || 8080;
 
+    this.connectDatabase();
+
     this.middlewares();
 
     this.routes();
-
-    this.connectDatabase();
   }
   middlewares() {
     // cors
@@ -67,6 +67,11 @@ module.exports = class Server {
     this.app.use(this.paths.home, require('./routes/auth.routes.js'));
     /* tasks */
     this.app.use(this.paths.tasks, require('./routes/tasks.routes.js'));
+
+    /* 404 page not found */
+    this.app.use((req, res) => {
+      res.render('404');
+    });
   }
 
   async connectDatabase() {
