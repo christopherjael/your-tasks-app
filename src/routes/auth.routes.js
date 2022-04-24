@@ -26,11 +26,11 @@ passport.use(
       try {
         const user = await User.findOne({ email });
         if (!user) {
-          return done(null, false, { message: 'User not found' });
+          return done(null, false, { error: true });
         }
         const valid = await user.isValidPassword(password);
         if (!valid) {
-          return done(null, false, { message: 'Password is not valid' });
+          return done(null, false, { error: true });
         }
         return done(null, user, { message: 'Login successful' });
       } catch (error) {
@@ -115,6 +115,8 @@ router.post(
   passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/signin',
+    failureMessage: 'Error to try to sign in',
+    failWithError: true,
   })
 );
 

@@ -2,8 +2,22 @@
   <h2 class='text-center'>
     Sign In
   </h2>
+
   <div class='card-body'>
     <form action='/signin' method='post'>
+
+      {{! Error message }}
+      {{#if errors}}
+        <div class='alert alert-dismissible alert-danger' role='alert'>
+          <button
+            type='button'
+            class='btn-close'
+            data-bs-dismiss='alert'
+          ></button>
+          Incorrect email or password, please try again
+        </div>
+      {{/if}}
+
       <div class='input-group mb-4'>
         <i class='bi bi-envelope-fill input-group-text'></i>
         <input
