@@ -4,6 +4,18 @@
   </h2>
   <div class='card-body'>
     <form action='/signup' method='post'>
+      {{! Error message }}
+      {{#if errors}}
+        <div class='alert alert-dismissible alert-danger' role='alert'>
+          <button
+            type='button'
+            class='btn-close'
+            data-bs-dismiss='alert'
+          ></button>
+          Error creating the account, the email is already registered
+        </div>
+      {{/if}}
+
       <div class='input-group mb-4'>
         <i class='bi bi-person-fill input-group-text'></i>
         <input
@@ -16,6 +28,7 @@
           aria-describedby='basic-addon1'
         />
       </div>
+
       <div class='input-group mb-4'>
         <i class='bi bi-envelope-fill input-group-text'></i>
         <input
@@ -41,6 +54,27 @@
           aria-describedby='basic-addon1'
           id='pass'
         />
+      </div>
+
+      <div class='input-group mb-4'>
+        <i class='bi bi-key-fill input-group-text'></i>
+        <input
+          type='password'
+          required='true'
+          class='form-control'
+          placeholder='Confirm password'
+          aria-label='Password'
+          aria-describedby='basic-addon1'
+          id='passConfirm'
+        />
+      </div>
+
+      {{! Error password are not equal }}
+      <div
+        class='alert alert-dismissible alert-danger d-none'
+        id='password-error-alert'
+      >
+        Error alert
       </div>
 
       <div class='input-group'>

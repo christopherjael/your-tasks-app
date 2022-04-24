@@ -4,6 +4,7 @@ const userAlreadyExist = async (req, res, next) => {
     const { email } = req.body;
     const user = await User.findOne({ email });
     if (user) {
+      req.session.messages = 'error to try sign up';
       return res.redirect('/signup');
     }
     next();
